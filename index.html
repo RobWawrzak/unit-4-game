@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Star Wars RPG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 text-right">
+          <h1> STAR WARS RPG GAME!!</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Battle Zone Area -->
+  <section class="container-fluid gameplaySection">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 text-left">
+        <!-- Select your champion header -->
+        <h4> Select Your Jedi</h4>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div id="charactersList">
+            <!-- this will be where characters will be displayed -->
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12 text-left">
+        <!-- Select your enemy aligned right header -->
+        <h4> Enemies To Attack</h4>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div id="enemyList">
+            <!-- This is where your enemies will be dynamically updated after a selection is made in your character-->
+            <p> Enemy list</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+        <h2> Battle Zone! </h2>
+      </div>
+    </div>
+    <div class="row">
+      <!-- This is the Battle Area -->
+      <div class="col-sm-12 col-md-4 col-lg-4 text-center">
+        <h2> Your Jedi!</h2>
+        <div class="col-sm-12 col-md-12 col-lg-12 ">
+          <!-- When you choose your character this is where it is pushed to -->
+          <div id="yourCharacter">
+
+            <!-- This is where your character will be dynamically updated -->
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-4 text-center">
+        <!-- This is the attack button -->
+        <button class="waves-effect waves-light btn-danger btn-lg attackBtn text-center" id="attackBtn"> Attack! </button>
+
+      </div>
+      <div class="col-sm-12 col-md-4 col-md-4 text-center">
+        <h2> Your Opponent</h2>
+        <div class="col-sm-12 col-md-12 col-lg-12 ">
+          <!-- This is where your chosen enemy will be dynamically updated -->
+          <div id="yourEnemy">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Houses the attack and game over text -->
+    <div class="row">
+      <div class="col-sm-12 col-md-2 col-lg-2"></div>
+      <div class="col-sm-12 col-md-8 col-lg-8 text-center">
+        <!-- This the area where the text gets updated as you play the game -->
+        <div id="attackText"> </div>
+        <!-- using this tag to create a button and use it to reset -->
+        <br>
+        <div id="gameOver">
+          <!-- <button> </button>   -->
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-2 col-lg-2"></div>
+    </div>
+  </section>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+  <script type="text/javascript" src="assets/javascript/javascript.js"></script>
+
+
+  <!-- Created a background with scrolling images -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.backstretch(['assets/images/bgImage1.jpg', 'assets/images/bgImage2.jpg', 'assets/images/bgImage3.jpg', 'assets/images/bgImage4.jpg'], {
+        duration: 10000,
+        fade: 900
+      });
+    });
+  </script>
+</body>
+
+</html>
