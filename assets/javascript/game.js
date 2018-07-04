@@ -85,8 +85,8 @@ $(document).ready(function() {
 
   function startGame() {
     createCharacters(charactersObjects);
-    pickYourCharacter();
-    pickYourOpponent();
+    // pickYourCharacter();
+    // pickYourOpponent();
     // fight();
   }
 
@@ -110,7 +110,7 @@ $(document).ready(function() {
         $('#charactersList').append($character);
       }
     } // end of if statement
-    else if (arg.length <= 3) {
+    else if (arg.length <= 5) {
       $('#remainingEnemies').empty();
 
       characters = [];
@@ -141,5 +141,7 @@ $(document).ready(function() {
       }
     }
   }
+  startGame();
 });
+
 // CLOSING createCharacter

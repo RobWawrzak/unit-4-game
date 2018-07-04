@@ -1,4 +1,47 @@
 body {
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-weight: bold;
   color: gold;
+}
+
+#charactersList {
+  width: 100%;
+  display: inline-block;
+}
+
+.character {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+
+  float: left;
+  display: block;
+  width: 200px;
+
+  background: white;
+  border: solid 4px black;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 7px;
+}
+
+.characterHealth {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.image {
+  height: 100px;
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* width: 100%; */
+
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
