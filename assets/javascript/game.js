@@ -20,10 +20,10 @@ $(document).ready(function() {
     counterAttackPower: 30
   };
 
-  var maceWindu = {
-    nickName: 'mace',
-    name: 'Mace Windu',
-    image: '<img src="assets/images/MaceWindu.jpg" class="image">',
+  var obiWanKenobi = {
+    nickName: 'obi',
+    name: 'Obi Wan Kenobi',
+    image: '<img src="assets/images/obiWanKenobi.jpg" class="image">',
     health: 180,
     attack: 7,
     counterAttackPower: 15
@@ -60,13 +60,14 @@ $(document).ready(function() {
   var charactersObjects = [
     luke,
     yoda,
-    maceWindu,
+    obiWanKenobi,
     darthVader,
     kyloRen,
     darthMaul
   ];
 
   // Array of strings with characters nick names
+  var yourCharacter = null;
   var characters = [];
   var $yourCharacter;
   var $currentEnemy;
@@ -85,7 +86,7 @@ $(document).ready(function() {
 
   function startGame() {
     createCharacters(charactersObjects);
-    // pickYourCharacter();
+    pickYourCharacter();
     // pickYourOpponent();
     // fight();
   }
@@ -133,7 +134,7 @@ $(document).ready(function() {
 
         characters.push(arg[i].nickName);
 
-        $('#remainingEnemies').append($character);
+        $('#enemyList').append($character);
       }
 
       if (!$currentEnemy) {
@@ -145,3 +146,30 @@ $(document).ready(function() {
 });
 
 // CLOSING createCharacter
+
+function pickYourCharacter() {
+  // TODO
+  // this function should pick your character and then automaticaly make the other charaters enemies.
+  $('.character').on('click', function() {
+    $('#characters').empty();
+    $('#characters').append('<div class="title">Your Character</div>');
+
+    $yourCharacter = $(this);
+    $yourCharacter.addClass('yourCharacter');
+    $yourCharacter.removeClass('col-md-3 character');
+
+    yourHealth = parseInt($yourCharacter.attr('data_health'));
+    yourAttack = parseInt($yourCharacter.attr('data_attack'));
+
+    $('#yourCharacter').append($yourCharacter);
+
+    $('#enemyList').append('<div class="title">Pick Your Enemy</div>');
+
+    // remove the chosen character and then run the createCharacters function again to recreate the 'enemies'
+    var indexRemove = characters.indexOf($yourCharacter.attr('data_nickName'));
+    charactersObjects.splice(indexRemove, 1);
+
+    // call createCharacters function again, but this time there are only 5
+    createCharacters(charactersObjects);
+  });
+}
